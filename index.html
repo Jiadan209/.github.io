@@ -245,13 +245,13 @@
             position: relative;
         }
 
-        /* ========== 作品展示面板（自适应窗口高度） ========== */
+        /* ========== 作品展示面板（高度调小） ========== */
         .turbowarp-wrapper {
             position: relative;
             width: 100%;
-            /* 动态计算高度：视口高度减去顶部Tab栏、卡片头部、外边距等（约180px） */
-            height: calc(100vh - 180px);
-            min-height: 400px; /* 最小高度保证可用性 */
+            /* 调整高度：原 calc(100vh - 180px) 改为 calc(100vh - 220px) */
+            height: calc(100vh - 220px);
+            min-height: 380px;
             background: #1a1a2e;
             border-radius: 0 0 var(--radius-lg) var(--radius-lg);
             overflow: hidden;
@@ -466,8 +466,7 @@
         /* ========== 响应式 ========== */
         @media (max-width: 900px) {
             .turbowarp-wrapper {
-                /* 小屏幕下适当减小上方预留空间 */
-                height: calc(100vh - 160px);
+                height: calc(100vh - 200px); /* 同步调小 */
                 min-height: 350px;
             }
             .tab-btn {
@@ -503,7 +502,7 @@
                 padding: 0 10px;
             }
             .turbowarp-wrapper {
-                height: calc(100vh - 140px);
+                height: calc(100vh - 170px); /* 小屏同样调小 */
                 min-height: 300px;
             }
             .tab-nav-wrapper {
@@ -570,7 +569,7 @@
                     <span class="tab-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
                     </span>
-                    展示
+                    作品展示
                 </button>
                 <button class="tab-btn" data-tab="download">
                     <span class="tab-icon">
@@ -588,12 +587,11 @@
         </div>
 
         <div class="main-content">
-            <!-- 作品展示面板（自适应高度） -->
             <div class="content-panel active" id="panel-project">
                 <div class="card">
                     <div class="card-header">
                         <div>
-                            <h3>实时聊天室</h3>
+                            <h3>我的实时聊天室</h3>
                             <span class="subtitle">在线聊天 · 云变量通信</span>
                         </div>
                     </div>
@@ -611,7 +609,6 @@
                 </div>
             </div>
 
-            <!-- 下载面板 -->
             <div class="content-panel" id="panel-download">
                 <div class="download-panel-content">
                     <div class="download-card-large">
@@ -642,7 +639,6 @@
                 </div>
             </div>
 
-            <!-- 关于面板 -->
             <div class="content-panel" id="panel-about">
                 <div class="about-grid">
                     <div class="about-card">
